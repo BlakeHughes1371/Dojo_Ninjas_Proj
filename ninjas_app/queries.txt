@@ -1,0 +1,112 @@
+# MY DOJOS #
+Dojo.objects.create(name="Dojo1", city="San Jose", state="CA")
+
+
+Dojo.objects.create(name="Dojo2", city="Senoia", state="GA")
+
+
+Dojo.objects.create(name="Dojo3", city="Grantsville", state="WV")
+
+#---------------------------------------------------------------------
+# DELETE DOJOS
+c = Dojo.objects.get(id = 1)
+c.delete()
+
+c = Dojo.objects.get(id = 2)
+c.delete()
+
+c = Dojo.objects.get(id = 3)
+c.delete()
+
+#---------------------------------------------------------------------
+
+# MY DOJOS #
+Dojo.objects.create(name="Dojo4", city="San Jose", state="CA")
+
+
+Dojo.objects.create(name="Dojo5", city="Senoia", state="GA")
+
+
+Dojo.objects.create(name="Dojo6", city="Grantsville", state="WV")
+
+#---------------------------------------------------------------------
+
+# MY NINJAS THAT BELONG TO FIRST DOJO #
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=4),first_name="Blake", last_name="Hughes", )
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=4),first_name="Savannah", last_name="Grant", )
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=4),first_name="Rachelle", last_name="Grant", )
+
+
+# MY NINJAS THAT BELONG TO SECOND DOJO #
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=5),first_name="Mila", last_name="Strugar")
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=5), first_name="Rob", last_name="Dahal")
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=5), first_name="Dusty", last_name="Pinkston")
+
+
+# MY NINJAS THAT BELONG TO THIRD DOJO #
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=6),first_name="Marcus", last_name="Holden")
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=6),first_name="Sam", last_name="Verbus")
+
+Ninja.objects.create(assigneddojo = Dojo.objects.get(id=6),first_name="Rene", last_name="Verbus")
+
+#---------------------------------------------------------------------
+
+# RETRIEVE ALL THE NINJAS FROM THE FIRST DOJO
+Dojo.objects.first().students.all()
+
+#---------------------------------------------------------------------
+
+# RETRIEVE ALL THE NINJAS FROM THE LAST DOJO
+Dojo.objects.get(id=6).students.all()
+
+#---------------------------------------------------------------------
+
+# RETRIEVE THE LAST NINJAS DOJO
+Ninja.objects.last().assigneddojo
+
+#---------------------------------------------------------------------
+# ADD A NEW TEXT FIELD CALLED "DESC" TO YOUR DOJO CLASS
+
+#---------------------------------------------------------------------
+# CREATE NEW DOJO
+Dojo.objects.create(name="Dojo7", city="Jacksonville", state="NC")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+retrieve all users
+
+User.objects.all()
+
+User.objects.first() - gets the first record in the table
+User.objects.last() - gets the last record in the table
+
+updates = User.objects.get(id=3)
+updates.lname = "Carl"
+updates.save()
+
+
+
+User.objects.all().order_by("fname")
+
+User.objects.all().order_by("-fname")
